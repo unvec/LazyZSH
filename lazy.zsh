@@ -31,8 +31,10 @@ if [[ $ZSH_PLUGIN_powerlevel10k == ON ]]; then
 fi
 
 if [[ $ZSH_SMART_CD == ON ]]; then
-    if ! eval "$(zoxide init zsh)"; then
-        source $LAZY_ZSH/init_scripts/zoxide.zsh
+    if ! command -v zoxide &>/dev/null; then
+        source $LAZY_ZSH/init_scripts/zoxide.zsh 1
+    else
+        eval "$(zoxide init zsh)"
     fi
 fi
 
