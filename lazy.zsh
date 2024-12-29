@@ -1,5 +1,8 @@
 #! zsh init profile DO NOT EXECUTE this DIRECTLY
 
+# ZSH 特性启用
+ZSH_SMART_CD=ON #智能跳转目录
+
 # ZSH 插件启用，不启用则注释掉那行即可
 ZSH_PLUGIN_autocomplete=ON
 ZSH_PLUGIN_autosuggestions=ON
@@ -25,6 +28,12 @@ fi
 if [[ $ZSH_PLUGIN_powerlevel10k == ON ]]; then
     source $LAZY_ZSH/plugins/powerlevel10k/powerlevel10k.zsh-theme
     source $LAZY_ZSH/p10k-theme.zsh
+fi
+
+if [[ $ZSH_SMART_CD == ON ]]; then
+    if ! eval "$(zoxide init zsh)"; then
+        source $LAZY_ZSH/init_scripts/zoxide.zsh
+    fi
 fi
 
 # ~/.zsh_history
