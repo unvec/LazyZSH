@@ -35,6 +35,7 @@ if [[ $ZSH_SMART_CD == ON ]]; then
         source $LAZY_ZSH/init_scripts/zoxide.zsh 1
     else
         eval "$(zoxide init zsh)"
+        alias cd=z
     fi
 fi
 
