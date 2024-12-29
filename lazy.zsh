@@ -10,6 +10,9 @@ ZSH_PLUGIN_syntax_highlighting=ON
 LAZY_ZSH=$HOME/.lazyzsh
 
 # 加载插件
+if [[ $ZSH_PLUGIN_syntax_highlighting == ON ]]; then
+    source $LAZY_ZSH/plugins/syntax-highlighting/zsh-syntax-highlighting.zsh
+fi
 if [[ $ZSH_PLUGIN_autocomplete == ON ]]; then
     source $LAZY_ZSH/plugins/autocomplete/zsh-autocomplete.plugin.zsh
     if [[ $(head -n1 /etc/os-release | grep Ubuntu) ]]; then
@@ -22,9 +25,6 @@ fi
 if [[ $ZSH_PLUGIN_powerlevel10k == ON ]]; then
     source $LAZY_ZSH/plugins/powerlevel10k/powerlevel10k.zsh-theme
     source $LAZY_ZSH/p10k-theme.zsh
-fi
-if [[ $ZSH_PLUGIN_syntax_highlighting == ON ]]; then
-    source $LAZY_ZSH/plugins/syntax-highlighting/zsh-syntax-highlighting.zsh
 fi
 
 # ~/.zsh_history
