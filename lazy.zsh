@@ -30,15 +30,6 @@ if [[ $ZSH_PLUGIN_powerlevel10k == ON ]]; then
     source $LAZY_ZSH/p10k-theme.zsh
 fi
 
-if [[ $ZSH_SMART_CD == ON ]]; then
-    if ! command -v zoxide &>/dev/null; then
-        source $LAZY_ZSH/init_scripts/zoxide.zsh 1
-    else
-        eval "$(zoxide init zsh)"
-        alias cd=z
-    fi
-fi
-
 # ~/.zsh_history
 setopt histignorealldups sharehistory
 HISTSIZE=1000
@@ -66,4 +57,13 @@ fi
 # 命令行别名
 if [ -f $LAZY_ZSH/alias.zsh ]; then
     source $LAZY_ZSH/alias.zsh
+fi
+
+if [[ $ZSH_SMART_CD == ON ]]; then
+    if ! command -v zoxide &>/dev/null; then
+        source $LAZY_ZSH/init_scripts/zoxide.zsh 1
+    else
+        eval "$(zoxide init zsh)"
+        alias cd=z
+    fi
 fi
