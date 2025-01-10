@@ -1,0 +1,16 @@
+[submodule "plugins/autosuggestions"]
+	path = plugins/autosuggestions
+	url = https://github.com/zsh-users/zsh-autosuggestions
+	shallow = true
+[submodule "plugins/powerlevel10k"]
+	path = plugins/powerlevel10k
+	url = https://github.com/romkatv/powerlevel10k
+	shallow = true
+[submodule "plugins/syntax-highlighting"]
+	path = plugins/syntax-highlighting
+	url = https://github.com/zsh-users/zsh-syntax-highlighting
+	shallow = true
+[submodule "plugins/autocomplete"]
+	path = plugins/autocomplete
+	url = https://github.com/marlonrichert/zsh-autocomplete
+	shallow = true
