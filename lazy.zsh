@@ -18,7 +18,7 @@ if [[ $ZSH_PLUGIN_syntax_highlighting == ON ]]; then
 fi
 if [[ $ZSH_PLUGIN_autocomplete == ON ]]; then
     source $LAZY_ZSH/plugins/autocomplete/zsh-autocomplete.plugin.zsh
-    if [[ $(head -n1 /etc/os-release | grep Ubuntu) ]]; then
+    if [[ -f /etc/os-release && $(head -n1 /etc/os-release | grep Ubuntu) ]]; then
         export skip_global_compinit=1
     fi
 fi
